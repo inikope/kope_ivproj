@@ -1,26 +1,26 @@
 google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawProdProf);
 document.getElementById('prod_prof_filter').addEventListener('change', function() {
   switch (this.value) {
     case 'cp':
-      drawChart(1);
+      drawProdProf(1);
       break;
     case 'ent':
-      drawChart(2);
+      drawProdProf(2);
       break;
     case 'gov':
-      drawChart(3);
+      drawProdProf(3);
       break;
     case 'mid':
-      drawChart(4);
+      drawProdProf(4);
       break;
     case 'sb':
-      drawChart(5);
+      drawProdProf(5);
       break;
   }
 });
 
-      function drawChart(number) {
+      function drawProdProf(number) {
       if(!number){
       	number = 1;
       }
@@ -46,7 +46,10 @@ document.getElementById('prod_prof_filter').addEventListener('change', function(
   }
  
         var options = {
-          title: 'Product Profit Based on Segment'
+          legend:{
+            position: 'top',
+            maxLine:3
+          }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('prod_prof_graph'));

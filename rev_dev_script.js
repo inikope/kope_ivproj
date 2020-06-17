@@ -1,20 +1,20 @@
 google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawMultSeries);
+google.charts.setOnLoadCallback(drawRevDev);
 document.getElementById('rev_dev_filter').addEventListener('change', function() {
     switch (this.value) {
          case 'all':
-            drawMultSeries();
+            drawRevDev();
         break;
         case '2013':
-            drawMultSeries(2013);
+            drawRevDev(2013);
         break;
         case '2014':
-            drawMultSeries(2014);
+            drawRevDev(2014);
         break;
     }
 });
 
-function drawMultSeries(year) {
+function drawRevDev(year) {
 	if(!year){
   	year = 0;
   }

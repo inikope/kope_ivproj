@@ -1,7 +1,7 @@
 google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawMultSeries);
+google.charts.setOnLoadCallback(drawTotRev);
 
-function drawMultSeries() {
+function drawTotRev() {
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'Year');
       data.addColumn('number', 'SUM of COGS');

@@ -1,19 +1,22 @@
 google.charts.load('current', {'packages':['line']});
-google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawProdUnit);
 
        document.getElementById('prod_unit_filter').addEventListener('change', function(){
        switch(this.value){
+          case 'all':
+            drawProdUnit();
+            break;
            case '2013':
-               drawChart(2013);
+            drawProdUnit(2013);
                break;
            case '2014':
-               drawChart(2014);
+            drawProdUnit(2014);
                break;
        }
   });
 
 
-   function drawChart(year) {
+   function drawProdUnit(year) {
    
        if(!year){
          year=0;
@@ -43,13 +46,7 @@ google.charts.setOnLoadCallback(drawChart);
      filteredDataArray.push(dataArray[0]);
      if(year == 0){
          for (var i=1; i<dataArray.length; i++) {
-                  if(dataArray[i][1] == 2013){
-                   dataArray[i][0] = dataArray[i][0] + " '13";
-                       filteredDataArray.push(dataArray[i]);
-           } else if(dataArray[i][1] == 2014){
-                   dataArray[i][0] = dataArray[i][0] + " '14";
-                       filteredDataArray.push(dataArray[i]);
-           }
+             filteredDataArray.push(dataArray[i]);
        }
      } else {
        for (var i=1; i<dataArray.length; i++) {
@@ -70,8 +67,7 @@ google.charts.setOnLoadCallback(drawChart);
      };
            
      var chart = new google.visualization.LineChart(document.getElementById('prod_unit_graph'));
-           
-        chart.draw(data, options);
+     chart.draw(data, options);
      
      
    }

@@ -1,22 +1,22 @@
 google.charts.load('current', {'packages':['line']});
-google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawProdSold);
 
        document.getElementById('prod_sold_filter').addEventListener('change', function(){
        switch(this.value){
          case 'all':
-           drawChart();
+           drawProdSold();
          break;
            case '2013':
-               drawChart(2013);
+               drawProdSold(2013);
                break;
            case '2014':
-               drawChart(2014);
+               drawProdSold(2014);
                break;
        }
   });
 
 
-   function drawChart(year) {
+   function drawProdSold(year) {
    
        if(!year){
          year=0;

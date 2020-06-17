@@ -1,7 +1,7 @@
 google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBarColors);
+google.charts.setOnLoadCallback(drawProdCountry);
 
-function drawBarColors() {
+function drawProdCountry() {
       var data = google.visualization.arrayToDataTable([
         ['City', 'Paseo', 'VTT', 'Amarilla', 'Velo', 'Montana', 'Carretera'],
         ['France', 838748.56, 716371.09, 667867.63, 707930.235, 461238.37, 388864.895],

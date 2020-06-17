@@ -1,6 +1,6 @@
 google.charts.load("current", {packages:["corechart"]});
-google.charts.setOnLoadCallback(drawChart);
-function drawChart() {
+google.charts.setOnLoadCallback(drawProdPer);
+function drawProdPer() {
   var data = google.visualization.arrayToDataTable([
     ['Product', 'Profit'],
     ['Amarilla', 2814104],
@@ -12,8 +12,10 @@ function drawChart() {
   ]);
 
   var options = {
-    title: 'Percentage Profit Product',
     pieHole: 0.4,
+    legend:{
+      position: 'bottom',
+    }
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('prod_percent_graph'));

@@ -1,9 +1,9 @@
 google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBasic);
+google.charts.setOnLoadCallback(drawGross);
 
-function drawBasic() {
+function drawGross() {
       var data = google.visualization.arrayToDataTable([
-        ['Product', 'Sum of Profit', 'Sum of Discounts', 'Sum of COGS',],
+        ['Product', 'Profit', 'Discounts', 'COGS',],
         ['Paseo', 4797438,	2600518,	28213706],
         ['VTT', 3034608,	1456612,	17477313],
         ['Velo', 2305992,	1576709,	15944067],
@@ -13,7 +13,6 @@ function drawBasic() {
       ]);
 
       var options = {
-        title: 'Gross Sales of Products',
         chartArea: {width: '50%'},
         isStacked: true,
         hAxis: {
@@ -22,6 +21,9 @@ function drawBasic() {
         },
         vAxis: {
           title: 'Product'
+        },
+        legend:{
+          position: 'top'
         }
       };
 
