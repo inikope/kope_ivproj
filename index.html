@@ -50,13 +50,13 @@
             </div>
             <div class="column">
                 <div class="graph-container">
-                    <h2>Total unit Sold every month</h2>
-                    <select id="prod_unit_filter">
+                    <h2>Product Sold Monthly</h2>
+                    <select id="prod_sold_filter">
                         <option value="all">All</option>
                         <option value="2013">2013</option>
                         <option value="2014">2014</option>
                     </select>
-                    <div class="graph" id="prod_unit_graph"></div>
+                    <div class="graph" id="prod_sold_graph"></div>              
                 </div>
             </div>
         </div>
@@ -86,16 +86,18 @@
     </div>
     <div class="single-table">
         <div class="graph-container">
-            <select id="prod_sold_filter">
+            <h1>Total unit Sold every month</h2>
+            <select id="prod_unit_filter">
                 <option value="all">All</option>
                 <option value="2013">2013</option>
                 <option value="2014">2014</option>
             </select>
-            <div class="graph" id="prod_sold_graph"></div>              
+            <div class="graph" id="prod_unit_graph"></div>
         </div>
     </div>
     <div class="single-table">
         <div class="graph-container">
+            <h1>Revenue Development</h2>
             <select id="rev_dev_filter">
                 <option value="all">All</option>
                 <option value="2013">2013</option>
@@ -106,6 +108,7 @@
     </div>
     <div class="single-table">
         <div class="graph-container">
+            <h1>Total Revenue</h1>
             <div class="graph" id="tot_rev_graph"></div>
         </div>
     </div>

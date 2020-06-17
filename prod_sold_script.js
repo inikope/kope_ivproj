@@ -68,11 +68,10 @@ google.charts.setOnLoadCallback(drawProdSold);
      data.removeColumn(1);
   
      var options = {
-        title: 'Product Sold Monthly',
         vAxis: {
           title: 'in millions of dollars (USD)',
         },
-        legend: { position: 'bottom' }
+        legend: { position: 'none' }
       };
            
      var chart = new google.visualization.LineChart(document.getElementById('prod_sold_graph'));

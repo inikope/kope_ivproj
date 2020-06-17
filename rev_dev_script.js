@@ -62,7 +62,6 @@ function drawRevDev(year) {
       data.removeColumn(1);
 
       var options = {
-        title: 'Revenue Development',
         hAxis: {
           title: 'Month',
         }
