@@ -63,15 +63,15 @@ google.charts.setOnLoadCallback(drawChart);
      data.removeColumn(1);
   
      var options = {
-       chart: {
-         title: 'Product Sold Monthly',
-         subtitle: 'in millions of dollars (USD)'
-       },
+         legend: {
+           position: 'top',
+           maxLines: 3
+         }
      };
            
-     var chart = new google.charts.Line(document.getElementById('prod_unit_graph'));
+     var chart = new google.visualization.LineChart(document.getElementById('prod_unit_graph'));
            
-        chart.draw(data, google.charts.Line.convertOptions(options));
+        chart.draw(data, options);
      
      
    }

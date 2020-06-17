@@ -64,23 +64,20 @@ google.charts.setOnLoadCallback(drawChart);
        }
      }
    
-          var data = google.visualization.arrayToDataTable(filteredDataArray); 
+     var data = google.visualization.arrayToDataTable(filteredDataArray); 
      data.removeColumn(1);
   
      var options = {
         title: 'Product Sold Monthly',
-        curveType: 'function',
-        subtitle: 'in millions of dollars (USD)',
-        curveType: 'function',
-        legend: {
-           position: 'top',
-           maxLines: 3
-        }
-    };
+        vAxis: {
+          title: 'in millions of dollars (USD)',
+        },
+        legend: { position: 'bottom' }
+      };
            
-     var chart = new google.charts.Line(document.getElementById('prod_sold_graph'));
+     var chart = new google.visualization.LineChart(document.getElementById('prod_sold_graph'));
            
-        chart.draw(data, google.charts.Line.convertOptions(options));
+        chart.draw(data, options);
      
      
    }
