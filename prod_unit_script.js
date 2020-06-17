@@ -2,28 +2,94 @@ google.charts.load('current', {'packages':['line']});
 google.charts.setOnLoadCallback(drawProdUnit);
 
        document.getElementById('prod_unit_filter').addEventListener('change', function(){
-       switch(this.value){
+        var product = document.getElementById('prod_unit_filter2').value;
+        var productCode = 0;
+          switch(product){
           case 'all':
-            drawProdUnit();
+            productCode = 0;
+            break;
+          case 'am':
+            productCode = 1;
+            break;
+          case 'ca':
+            productCode = 2;
+            break;
+          case 'mo':
+            productCode = 3;
+            break;
+          case 'pa':
+            productCode = 4;
+            break;
+          case 've':
+            productCode = 5;
+            break;
+          case 'vtt':
+            productCode = 6;
+            break;
+        }
+        switch(this.value){
+          case 'all':
+            drawProdUnit(0, productCode);
             break;
            case '2013':
-            drawProdUnit(2013);
+            drawProdUnit(2013, productCode);
                break;
            case '2014':
-            drawProdUnit(2014);
+            drawProdUnit(2014, productCode);
                break;
        }
   });
+  document.getElementById('prod_unit_filter2').addEventListener('change', function(){
+    var yearVal = document.getElementById('prod_unit_filter').value;
+    var year = 0;
+    switch(yearVal){
+      case '2013':
+        year = 2013;
+        break;
+      case '2014':
+        year = 2014;
+        break;
+      default:
+        year = 0;
+        break;
+    }
+    switch(this.value){
+       case 'all':
+         drawProdUnit(year, 0);
+         break;
+        case 'am':
+         drawProdUnit(year, 1);
+            break;
+        case 'ca':
+         drawProdUnit(year, 2);
+            break;
+        case 'mo':
+          drawProdUnit(year, 3);
+              break;
+        case 'pa':
+         drawProdUnit(year, 4);
+            break;
+        case 've':
+          drawProdUnit(year, 5);
+             break;
+        case 'vtt':
+          drawProdUnit(year, 6);
+             break;
+      }
+    });
 
 
-   function drawProdUnit(year) {
+   function drawProdUnit(year, product) {
    
        if(!year){
          year=0;
      }
+     if(!product){
+       product = 0;
+     }
 
      var dataArray = [
-     ['Month', 'Year', 'Amarilla', 'Carratera', 'Montana', 'Paseo', 'Velo', 'VTT'], 
+     ['Month', 'Year', 'Amarilla', 'Carretera', 'Montana', 'Paseo', 'Velo', 'VTT'], 
      [ 'September', 	2013, 6691, 	6045, 	6620, 	15790, 	7502, 	7953],
      [ 'October',	2013, 14044,	11571,	17608,	26789,	13836,	11774],
      [ 'November',	2013, 5709,	7690,		7821,		20812,	10193,	13256],
@@ -63,7 +129,15 @@ google.charts.setOnLoadCallback(drawProdUnit);
    
           var data = google.visualization.arrayToDataTable(filteredDataArray); 
      data.removeColumn(1);
+     if(product != 0){
+      for (var i = 6; i >= 1; i--) {
+        if(i != product){
+          data.removeColumn(i);
+        }
   
+     }
+}
+
      var options = {
          legend: {
            position: 'top',
