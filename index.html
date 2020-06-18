@@ -1,35 +1,37 @@
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Product Summary</title>
 </head>
 <body>
     <div class = "overview-header">
+		<h1>Product Summary</h1>
         <div class="row">
             <div class="column">
             <div class="card">
                 <h3>Unit Sold</h3>
-                <p>1,125,806</p>
+                <p>1,125,806 pcs</p>
             </div>
             </div>
             <div class="column">
             <div class="card">
                 <h3>Gross Sell</h3>
-                <p>127,931,598.5</p>
+                <p>127,931,598.5 USD</p>
             </div>
             </div>
             
             <div class="column">
             <div class="card">
                 <h3>Expenses</h3>
-                <p>101,832,648</p>
+                <p>101,832,648 USD</p>
             </div>
             </div>
             
             <div class="column">
             <div class="card">
                 <h3>Profit</h3>
-                <p>16,893,702.26</p>
+                <p>16,893,702.26 USD</p>
             </div>
             </div>
         </div>
@@ -73,6 +75,7 @@
                 <div class="graph-container">
                     <h2>Product Profit Based on Segment</h2>
                     <select id="prod_prof_filter">
+                        <option value="all">All Segment</option>
                         <option value="cp">Channel Partners</option>
                         <option value="ent">Enterprise</option>
                         <option value="gov">Goverment</option>
@@ -86,9 +89,9 @@
     </div>
     <div class="single-table">
         <div class="graph-container">
-            <h1>Total unit Sold every month</h2>
+            <h1>Total Unit Sold Every Month</h2>
             <select id="prod_unit_filter">
-                <option value="all">All</option>
+                <option value="all">All Time</option>
                 <option value="2013">2013</option>
                 <option value="2014">2014</option>
             </select>
@@ -121,13 +124,34 @@
             <div class="graph" id="tot_rev_graph"></div>
         </div>
     </div>
-    <script type="text/javascript" src="rev_dev_script.js"></script>
-    <script type="text/javascript" src="tot_rev_script.js"></script>
-    <script type="text/javascript" src="gross_sales_script.js"></script>
-    <script type="text/javascript" src="prod_prof_script.js"></script>
-    <script type="text/javascript" src="prod_sold_script.js"></script>
-    <script type="text/javascript" src="prod_unit_script.js"></script>
-    <script type="text/javascript" src="prod_percent_script.js"></script>
-    <script type="text/javascript" src="prod_country_script.js"></script>
+    <div class="footer">
+        <div class="creator">
+            <div class="row">
+                <div class="column">
+                    <img src="image/vanessa.jpg"/>
+                    <p>2201741385</p>
+                    <p>Vanessa Louise</p>
+                </div>
+                <div class="column">
+                    <img src="image/nadhifa.jpg"/>
+                    <p>2201742860</p>
+                    <p>Nadhifa Rachma Zalfa Sekar Arum</p>
+                </div>
+                <div class="column">
+                    <img src="image/hans.jpg"/>
+                    <p>2201801636</p>
+                    <p>Hans Nugroho Gianto Hadiwijaya</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/rev_dev_script.js"></script>
+    <script type="text/javascript" src="js/tot_rev_script.js"></script>
+    <script type="text/javascript" src="js/gross_sales_script.js"></script>
+    <script type="text/javascript" src="js/prod_prof_script.js"></script>
+    <script type="text/javascript" src="js/prod_sold_script.js"></script>
+    <script type="text/javascript" src="js/prod_unit_script.js"></script>
+    <script type="text/javascript" src="js/prod_percent_script.js"></script>
+    <script type="text/javascript" src="js/prod_country_script.js"></script>
 </body>
 </html>

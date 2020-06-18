@@ -3,7 +3,7 @@ google.charts.setOnLoadCallback(drawGross);
 
 function drawGross() {
       var data = google.visualization.arrayToDataTable([
-        ['Product', 'Profit', 'Discounts', 'COGS',],
+        ['Product' , 'Profit', 'Discounts', 'COGS',],
         ['Paseo', 4797438,	2600518,	28213706],
         ['VTT', 3034608,	1456612,	17477313],
         ['Velo', 2305992,	1576709,	15944067],

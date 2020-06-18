@@ -70,6 +70,9 @@ google.charts.setOnLoadCallback(drawProdSold);
      var options = {
         vAxis: {
           title: 'in millions of dollars (USD)',
+          viewWindow: {
+            max: 14500            
+          }
         },
         legend: { position: 'none' }
       };
