@@ -19,7 +19,7 @@ function drawRevDev(year) {
   	year = 0;
   }
   var arrayData =
-    [['Month', 	'Year', 'Profit', 	'Sales', 			'COGS'],
+    [['Month', 	'Year', 'Profit', 	'Gross Sales', 			'COGS'],
     ['September',2013, 763603.03,	 4484000.03,	 3720397],
     ['October', 	2013, 1657795.1,	  9295611.1,	 7637816],
     ['November',	2013, 765502.3, 	  7267203.3,	 6501701],
